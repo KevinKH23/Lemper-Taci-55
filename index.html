@@ -50,8 +50,28 @@
       <div class="popup-content">
         <span class="close">&times;</span>
         <h2>Pesan Kue Lemper</h2>
-        <p>Pilih jenis kue lemper yang Anda inginkan dan jumlahnya.</p>
-        <!-- Tambahkan konten lainnya sesuai kebutuhan -->
+        <form id="order-form">
+          <div class="input-group">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="input-group">
+            <label for="date">Untuk Tanggal:</label>
+            <input type="date" id="date" name="date" required />
+          </div>
+          <div class="input-group">
+            <label for="quantity">Jumlah:</label>
+            <div class="quantity-selector">
+              <button type="button" id="minus">-</button>
+              <span id="quantity">1</span>
+              <button type="button" id="plus">+</button>
+            </div>
+          </div>
+          <div class="total-price">
+            Total: <span id="total">Rp 3.000,00</span>
+          </div>
+          <button type="submit" class="submit-btn">Pesan Sekarang</button>
+        </form>
       </div>
     </div>
 

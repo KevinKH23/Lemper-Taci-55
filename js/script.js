@@ -47,3 +47,57 @@ window.addEventListener("click", function (event) {
     popup.style.display = "none";
   }
 });
+
+// Mendapatkan elemen
+const minusButton = document.getElementById("minus");
+const plusButton = document.getElementById("plus");
+const quantityDisplay = document.getElementById("quantity");
+const totalDisplay = document.getElementById("total");
+
+let quantity = 1;
+const pricePerItem = 3000;
+
+// Fungsi untuk memperbarui tampilan total harga
+function updateTotal() {
+  const total = quantity * pricePerItem;
+  totalDisplay.textContent = `Rp ${total.toLocaleString("id-ID")}`;
+}
+
+// Fungsi untuk mengurangi jumlah
+minusButton.addEventListener("click", function () {
+  if (quantity > 1) {
+    quantity--;
+    quantityDisplay.textContent = quantity;
+    updateTotal();
+  }
+});
+
+// Fungsi untuk menambah jumlah
+plusButton.addEventListener("click", function () {
+  quantity++;
+  quantityDisplay.textContent = quantity;
+  updateTotal();
+});
+
+// Perbarui total saat halaman dimuat
+updateTotal();
+
+// Button submit diklik
+document.getElementById("order-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const date = document.getElementById("date").value;
+  const quantity = quantityDisplay.textContent;
+
+  // Format tanggal menjadi day/month/year
+  const [year, month, day] = date.split("-");
+  const formattedDate = `${day}/${month}/${year}`;
+
+  const message = `Hai, apakah saya bisa memesan lemper untuk tanggal ${formattedDate} dengan jumlah ${quantity} atas nama ${name}?`;
+
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappURL = `https://wa.me/6282120797071?text=${encodedMessage}`;
+
+  window.open(whatsappURL, "_blank");
+});
