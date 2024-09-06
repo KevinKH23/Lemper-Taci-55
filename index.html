@@ -7,7 +7,12 @@
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="css/style.css" />
-    <title>Lemper 55 Petratean</title>
+    <!-- Box Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Lemper Taci 55</title>
   </head>
 
   <body>
@@ -18,7 +23,7 @@
       <div class="navbar-nav">
         <a href="#home">Home</a>
         <a href="#about">Tentang Kami</a>
-        <a href="#menu">Menu</a>
+        <a href="#menu">Menu Kami</a>
         <a href="#contact">Kontak Kami</a>
       </div>
 
@@ -34,11 +39,21 @@
     <section class="hero" id="home">
       <main class="content">
         <h1>Mari Nikmati Kue<span> Lemper</span></h1>
-        <p>yang nikmat, gurih, dan lezat!</p>
-        <a href="#" class="cta">Beli Sekarang</a>
+        <p>yang <span id="typing-text"></span></p>
+        <a href="#" class="cta">Pesan Sekarang</a>
       </main>
     </section>
     <!-- Hero Section end-->
+
+    <!-- Pop-up Menu -->
+    <div class="popup" id="popup-menu">
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2>Pesan Kue Lemper</h2>
+        <p>Pilih jenis kue lemper yang Anda inginkan dan jumlahnya.</p>
+        <!-- Tambahkan konten lainnya sesuai kebutuhan -->
+      </div>
+    </div>
 
     <!-- About Section start-->
     <section class="about" id="about">
@@ -51,13 +66,16 @@
         <div class="content">
           <h3>Kenapa memilih Lemper Taci 55?</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum maxime
-            hic, dolorem minima iste culpa?
+            Lemper Taci 55 menawarkan rasa gurih dan lezat yang berasal dari
+            bahan-bahan berkualitas. Setiap lemper dibuat dengan perhatian pada
+            detail, memastikan cita rasa yang konsisten dan memuaskan di setiap
+            gigitan
           </p>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque,
-            aut. Quasi incidunt sequi debitis odio laudantium repellat
-            recusandae fuga reprehenderit!
+            Kami juga dikenal dengan harga yang terjangkau, sehingga siapa pun
+            bisa menikmati lemper dengan kualitas terbaik. Lemper Taci 55 telah
+            menjadi pilihan banyak pelanggan yang mencari makanan tradisional
+            dengan rasa yang autentik dan terpercaya.
           </p>
         </div>
       </div>
@@ -68,19 +86,57 @@
     <section class="menu" id="menu">
       <h2><span>Menu</span> Kami</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-        iste, ullam quo sapiente officiis eaque!
+        Nikmati pilihan lemper favorit Anda dan rasakan kelezatannya di setiap
+        gigitan!
       </p>
 
       <div class="row">
-        <div class="menu-cart">
-          <img src="img/menu/..." alt="Lemper 2000" class="menu-card-img" />
-          <h3 class="menu-card-title">- Lemper -</h3>
-          <p class="menu-card-price">Rp 2k</p>
+        <div class="menu-card">
+          <img src="img/" alt="" class="menu-card-img" />
+          <h3 class="menu-card-title">- Lemper Ayam -</h3>
+          <p class="menu-card-price">Rp 3.000</p>
         </div>
       </div>
     </section>
     <!-- Menu Section end -->
+
+    <!-- Contact Section Start -->
+    <section class="contact" id="contact">
+      <h2><span>Kontak</span> Kami</h2>
+      <div class="contact-container">
+        <div class="contact-left">
+          <!-- Embed Google Maps -->
+          <iframe
+            src="https://www.google.com/maps/d/u/0/embed?mid=143BmG9JpQRYcqgYVCR9-VDRUwfypEqg&ehbc=2E312F"
+            width="100%"
+            height="400"
+            style="border: 1px solid #000"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+
+        <div class="contact-right">
+          <div class="info">
+            <a href="" id="phone"><i data-feather="phone"></i></a>
+            <p>Telp. (0231) 200178</p>
+          </div>
+          <div class="info">
+            <a href=""><i class="bx bxl-whatsapp"></i></a>
+            <p>Whatsapp 088212592091</p>
+          </div>
+          <div class="info">
+            <a href="" id="maps"><i data-feather="map-pin"></i></a>
+            <p>
+              Jalan Petratean Barat Gang 1 No. 55, Kec. Pekalipan, Kota Cirebon,
+              Jawa Barat
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section End -->
 
     <!-- Feather icons -->
     <script>
@@ -88,6 +144,7 @@
     </script>
 
     <!--Javascript  -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

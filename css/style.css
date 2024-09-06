@@ -19,7 +19,6 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--bg);
   color: #fff;
-  min-height: 3000px;
 }
 
 /* navbar */
@@ -92,7 +91,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url("../img/bg.png");
+  background-image: url("../img/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -106,11 +105,6 @@ body {
   width: 100%;
   height: 25%;
   bottom: 0;
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 8%,
-    rgba(255, 255, 255, 0) 50%
-  );
 }
 
 .hero .content {
@@ -130,12 +124,11 @@ body {
 }
 
 .hero .content p {
-  font-size: 1.6rem;
+  font-size: 3em;
   margin-top: 1rem;
   line-height: 1.4;
-  font-weight: 300;
+  font-weight: 500;
   text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
-  mix-blend-mode: difference;
 }
 
 .hero .content .cta {
@@ -149,22 +142,68 @@ body {
   box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
 }
 
+/* Pop Up */
+.popup {
+  display: none; /* Sembunyikan pop-up secara default */
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Warna latar belakang semi-transparan */
+}
+
+.popup-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /* About Section */
 .about,
-.menu {
+.menu,
+.contact {
   padding: 8rem 7% 1.4rem;
   color: #000;
+  min-height: 100vh;
 }
 
 .about h2,
-.menu h2 {
+.menu h2,
+.contact h2 {
   text-align: center;
   font-size: 2.6rem;
   margin-bottom: 3rem;
 }
 
 .about h2 span,
-.menu h2 span {
+.menu h2 span,
+.contact h2 span {
   color: #195a11;
 }
 
@@ -221,6 +260,21 @@ body {
   justify-content: center;
 }
 
+.menu-card {
+  background-color: #195a11;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-10px);
+}
+
 .menu .row .menu-card {
   text-align: center;
 }
@@ -232,6 +286,54 @@ body {
 
 .menu .row .menu-card .menu-card-title {
   margin: 1.5rem auto 0.5rem;
+}
+
+/* Contact Section */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact-left,
+.contact-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Memberikan jarak antara setiap baris info */
+  padding: 20px; /* Memberikan padding untuk mengatur ruang di sekitar elemen */
+  background-color: #f9f9f9; /* Warna latar belakang untuk kontras */
+  border-radius: 10px; /* Membuat sudut sedikit membulat */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk efek depth */
+}
+
+.contact-right .info {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Memberikan jarak antara ikon dan teks */
+  font-size: 1.3rem; /* Ukuran font untuk teks */
+  color: #333; /* Warna teks */
+}
+
+.contact-right .info a {
+  font-size: 32px;
+  color: #195a11;
+}
+
+.contact-right .info i {
+  font-size: 32px; /* Ukuran ikon */
+  color: #195a11; /* Warna ikon disesuaikan dengan tema */
+}
+
+.contact-right .info p {
+  margin: 0;
+  line-height: 1.5; /* Jarak antar baris teks */
+  flex: 1; /* Membuat teks mengisi ruang yang tersisa */
 }
 
 /* Media Queries */
@@ -258,7 +360,7 @@ body {
     top: 100%;
     right: -100%;
     background-color: var(--primary);
-    width: 30rem;
+    width: 25rem;
     height: 100vh;
     transition: 0.3s;
   }
@@ -304,6 +406,14 @@ body {
   .about .row .content h3 {
     margin-top: 1rem;
     font-size: 1.6rem;
+  }
+
+  .contact-container {
+    gap: 0;
+  }
+
+  .contact-right {
+    padding: 5px 20px 0 20px;
   }
 }
 
